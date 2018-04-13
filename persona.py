@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 def menu():
     print
-    print "Gestión de personas"
+    print "================================="
+    print "\tGestión de personas"
+    print "================================="
     print "\t1- Crear"
     print "\t2- Editar"
     print "\t3- Consultar"
@@ -12,9 +14,12 @@ def menu():
 
 def menuEditar():
     print
+    print "================================="
     print "Editar:"
+    print "================================="
     print "\t1- Nombre"
-    print "\t2- Identificacion"
+    print "\t2- Edad
+    "
     print "\t3- Nacionalidad"
     print "\t4- Genero"
     print "\t5- Regresar al menú"
@@ -41,6 +46,15 @@ idConsulta=""
 #====ELIMINAR====
 idEliminar=""
 
+#======METODOS======
+def calcularSalario():
+    print "Salario"
+def calcularNumeroAutos():
+    print "# Autos"
+def calcularValorAuto():
+    print "Valor Auto"
+
+#======CRUD========
 def crear():
     print
     nombre=raw_input("Ingrese su nombre: ")
