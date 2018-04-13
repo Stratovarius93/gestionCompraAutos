@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 def menu():
+    print
     print "Gestión de personas"
     print "\t1- Crear"
     print "\t2- Editar"
@@ -16,7 +17,7 @@ def menuEditar():
     print "\t2- Identificacion"
     print "\t3- Nacionalidad"
     print "\t4- Genero"
-    print "\t5- Cancelar"
+    print "\t5- Regresar al menú"
 
 #====CREAR====
 nombre=""
@@ -77,6 +78,7 @@ def eliminar():
         posicion=arrayIdentificacion.index(idEliminar)
         print "Datos encontrados: "
         print arrayPersona[posicion]
+        print
         respuesta=raw_input("¿Desea eliminarlo?(SI/NO)")
         if respuesta=="SI" or respuesta=="si" or respuesta=="Si":
             arrayPersona.pop(posicion)
@@ -123,11 +125,51 @@ def editarEdad():
         nuevaPersona=[arrayNombre[posicion],arrayIdentificacion[posicion],nuevaEdad,arrayNacionalidad[posicion],arrayGenero[posicion]]
         arrayPersona[posicion]=nuevaPersona
 
-        print arrayNombre[posicion]
+        print arrayEdad[posicion]
         print arrayPersona[posicion]
         print "La edad se cambió correctamente."
     else:
         print "No se pudo cambiar la edad."
+    print
+
+def editarNacionalidad():
+    print
+    idNacionalidad=raw_input("Ingrese el número de identifiación: ")
+    if (idNacionalidad in arrayIdentificacion)==True:
+        posicion=arrayIdentificacion.index(idNacionalidad)
+        print "Datos encontrados: "
+        print arrayPersona[posicion]
+
+        nuevaNacionalidad=raw_input("Ingrese la nueva nacionalidad: ");
+        arrayNacionalidad[posicion]=nuevaNacionalidad
+        nuevaPersona=[arrayNombre[posicion],arrayIdentificacion[posicion],arrayEdad[posicion],nuevaNacionalidad,arrayGenero[posicion]]
+        arrayPersona[posicion]=nuevaPersona
+
+        print arrayNacionalidad[posicion]
+        print arrayPersona[posicion]
+        print "La nacionalidad se cambió correctamente."
+    else:
+        print "No se pudo cambiar la nacionalidad."
+    print
+
+def editarGenero():
+    print
+    idGenero=raw_input("Ingrese el número de identifiación: ")
+    if (idGenero in arrayIdentificacion)==True:
+        posicion=arrayIdentificacion.index(idGenero)
+        print "Datos encontrados: "
+        print arrayPersona[posicion]
+
+        nuevoGenero=raw_input("Ingrese su nuevo género: ");
+        arrayGenero[posicion]=nuevoGenero
+        nuevaPersona=[arrayNombre[posicion],arrayIdentificacion[posicion],arrayEdad[posicion],arrayNacionalidad[posicion],nuevoGenero]
+        arrayPersona[posicion]=nuevaPersona
+
+        print arrayGenero[posicion]
+        print arrayPersona[posicion]
+        print "Su género se cambió correctamente."
+    else:
+        print "No se pudo cambiar el género."
     print
 
 def editar():
@@ -140,45 +182,32 @@ def editar():
         elif (opcion==2):
             editarEdad()
         elif (opcion==3):
-            #editar nacionalidad
+            editarNacionalidad()
         elif (opcion==4):
-            #editar genero
+            editarGenero()
         elif (opcion==5):
-            while True:
-                menu()
-                opcion=input("Inserte un número >>")
-                if (opcion==1):
-                    crear()
-                elif (opcion==2):
-                    editar()
-                elif (opcion==3):
-                    consultar()
-                elif (opcion==4):
-                    eliminar()
-                elif (opcion==5):
-                    print "Opción 5"
-                elif (opcion==6):
-                    break
-                else:
-                    print "Opción incorrecta"
+            break
         else:
             print "Opción incorrecta"
     print
 
-while True:
-    menu()
-    opcion=input("Inserte un número >>")
-    if (opcion==1):
-        crear()
-    elif (opcion==2):
-        editar()
-    elif (opcion==3):
-        consultar()
-    elif (opcion==4):
-        eliminar()
-    elif (opcion==5):
-        print "Opción 5"
-    elif (opcion==6):
-        break
-    else:
-        print "Opción incorrecta"
+def menuStart():
+    while True:
+        menu()
+        opcion=input("Inserte un número >>")
+        if (opcion==1):
+            crear()
+        elif (opcion==2):
+            editar()
+        elif (opcion==3):
+            consultar()
+        elif (opcion==4):
+            eliminar()
+        elif (opcion==5):
+            print "Opción 5"
+        elif (opcion==6):
+            break
+        else:
+            print "Opción incorrecta"
+
+menuStart()
