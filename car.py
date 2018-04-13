@@ -15,6 +15,11 @@ Toyota = Car("Toyota", "2018", "Fortuner", "163 hp", "0 km", "34,500.00")
 Honda = Car("Honda", "2016", "HR-V", "141 hp", "100 km", "20,104.00")
 Nissan = Car("Nissan", "2017", "SUV", "118 hp", "50 km", "26,700.00")
 
+arrayChevrolet = []
+arrayToyota = []
+arrayHonda = []
+arrayNissan = []
+arrayCar = []
 
 class Buy:
     def buying(self):
@@ -44,7 +49,14 @@ class Menu():
             pay = raw_input("desea comprar este auto?\n")
             if pay == "si":
                 print "Compra exitosa.....Regresando al menu de compra"
+                arrayChevrolet.append(Chevrolet.mark)
+                arrayChevrolet.append(Chevrolet.model)
+                arrayChevrolet.append(Chevrolet.year)
+                arrayChevrolet.append(Chevrolet.motor)
+                arrayChevrolet.append(Chevrolet.cost)
+                arrayCar.append(arrayChevrolet)
                 time.sleep(4)
+
             elif pay == "no":
                 print "Regresando al menu de seleccion"
                 time.sleep(4)
@@ -57,6 +69,12 @@ class Menu():
             pay = raw_input()
             if pay == "si":
                 print "Compra exitosa.....Regresando al menu de compra"
+                arrayToyota.append(Toyota.mark)
+                arrayToyota.append(Toyota.model)
+                arrayToyota.append(Toyota.year)
+                arrayToyota.append(Toyota.motor)
+                arrayToyota.append(Toyota.cost)
+                arrayCar.append(arrayToyota)
                 time.sleep(4)
             elif pay == "no":
                 print "Regresando al menu de seleccion"
@@ -70,6 +88,12 @@ class Menu():
             pay = raw_input()
             if pay == "si":
                 print "Compra exitosa.....Regresando al menu de compra"
+                arrayHonda.append(Honda.mark)
+                arrayHonda.append(Honda.model)
+                arrayHonda.append(Honda.year)
+                arrayHonda.append(Honda.motor)
+                arrayHonda.append(Honda.cost)
+                arrayCar.append(arrayHonda)
                 time.sleep(4)
             elif pay == "no":
                 print "Regresando al menu de seleccion"
@@ -83,6 +107,12 @@ class Menu():
             pay = raw_input()
             if pay == "si":
                 print "Compra exitosa.....Regresando al menu de compra"
+                arrayNissan.append(Nissan.motor)
+                arrayNissan.append(Nissan.motor)
+                arrayNissan.append(Nissan.motor)
+                arrayNissan.append(Nissan.motor)
+                arrayNissan.append(Nissan.motor)
+                arrayCar.append(arrayNissan)
                 time.sleep(4)
             elif pay == "no":
                 print "Regresando al menu de seleccion"
