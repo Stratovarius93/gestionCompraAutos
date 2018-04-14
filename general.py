@@ -43,6 +43,9 @@ arrayToyota = []
 arrayHonda = []
 arrayNissan = []
 arrayCar = []
+
+aprobacionCompra=0
+posicionP=0
 class Buy():
     def buying(self):
         print "============================================"
@@ -322,22 +325,39 @@ class auto():
                 print "============================================"
                 time.sleep(2)
                 print Chevrolet.mark, "\nModelo: ", Chevrolet.model, "\nAnio: ", Chevrolet.year, "\nMotor: ", Chevrolet.motor, "\nKilometraje: ", Chevrolet.km, "\nPrecio: ", Chevrolet.cost
-                time.sleep(4)
+                time.sleep(1)
                 print
-                print "¿Desea comprar este auto?(si/no)\n"
-                pay = raw_input()
+                pay = raw_input("¿Desea comprar este auto?(si/no) >>")
                 if pay == "si" or pay=="SI" or pay=="Si":
-                    print "Procesando..."
-                    time.sleep(1)
-                    print "<<=- Su compra se ha realizado con éxito -=>>"
-                    print "Regresando al menú de compra..."
-                    arrayChevrolet.append(Chevrolet.mark)
-                    arrayChevrolet.append(Chevrolet.model)
-                    arrayChevrolet.append(Chevrolet.year)
-                    arrayChevrolet.append(Chevrolet.motor)
-                    arrayChevrolet.append(Chevrolet.cost)
-                    arrayCar.append(arrayChevrolet)
-                    time.sleep(4)
+                    identidad=raw_input("Ingrese su número de identidad:")
+                    if (identidad in arrayIdentificacion)==True:
+                        posicion=arrayIdentificacion.index(identidad)
+                        print "Datos encontrados: "
+                        print
+                        print "================================="
+                        print arrayPersona[posicion]
+                        print "================================="
+                        print
+                        opcionC=raw_input("¿Desea proceder con la compra?(Si/No) >>")
+                        if opcionC=="si" or opcionC=="SI" or opcionC=="Si":
+                            print "Procesando..."
+                            time.sleep(1)
+                            arrayChevrolet.append(Chevrolet.mark)
+                            arrayChevrolet.append(Chevrolet.model)
+                            arrayChevrolet.append(Chevrolet.year)
+                            arrayChevrolet.append(Chevrolet.motor)
+                            arrayChevrolet.append(Chevrolet.cost)
+                            arrayCar.append(arrayChevrolet)
+                            arrayPersona[posicion].append(arrayChevrolet)
+                            print arrayPersona[posicion]
+                            print "FELICIDADES:Su compra se ha realizado con éxito"
+                            print "Regresando al menú de compra..."
+                        elif opcionC=="no" or opcionC=="NO" or opcionC=="No":
+                            print "Cancelado"
+                    else:
+                        print "No se encontró resultados"
+                    print
+                    time.sleep(2)
 
                 elif pay == "no" or pay=="NO" or pay=="No":
                     print "Regresando al menu de seleccion"
@@ -348,22 +368,40 @@ class auto():
                 print "============================================"
                 time.sleep(2)
                 print Toyota.mark, "\nModelo: ", Toyota.model, "\nAnio: ", Toyota.year, "\nMotor: ", Toyota.motor, "\nKilometraje: ", Toyota.km, "\nPrecio: ", Toyota.cost
-                time.sleep(4)
+                time.sleep(1)
                 print
-                print "¿Desea comprar este auto?(si/no)\n"
-                pay = raw_input()
+                pay = raw_input("¿Desea comprar este auto?(si/no) >>")
                 if pay == "si" or pay=="SI" or pay=="Si":
-                    print "Procesando..."
-                    time.sleep(1)
-                    print "<<=- Su compra se ha realizado con éxito -=>>"
-                    print "Regresando al menú de compra..."
-                    arrayToyota.append(Toyota.mark)
-                    arrayToyota.append(Toyota.model)
-                    arrayToyota.append(Toyota.year)
-                    arrayToyota.append(Toyota.motor)
-                    arrayToyota.append(Toyota.cost)
-                    arrayCar.append(arrayToyota)
-                    time.sleep(4)
+                    identidad=raw_input("Ingrese su número de identidad:")
+                    if (identidad in arrayIdentificacion)==True:
+                        posicion=arrayIdentificacion.index(identidad)
+                        print "Datos encontrados: "
+                        print
+                        print "================================="
+                        print arrayPersona[posicion]
+                        print "================================="
+                        print
+                        opcionC=raw_input("¿Desea proceder con la compra?(Si/No) >>")
+                        if opcionC=="si" or opcionC=="SI" or opcionC=="Si":
+                            print "Procesando..."
+                            time.sleep(1)
+                            arrayToyota.append(Toyota.mark)
+                            arrayToyota.append(Toyota.model)
+                            arrayToyota.append(Toyota.year)
+                            arrayToyota.append(Toyota.motor)
+                            arrayToyota.append(Toyota.cost)
+                            arrayCar.append(arrayToyota)
+                            arrayPersona[posicion].append(arrayToyota)
+                            print arrayPersona[posicion]
+                            print "FELICIDADES:Su compra se ha realizado con éxito"
+                            print "Regresando al menú de compra..."
+                        elif opcionC=="no" or opcionC=="NO" or opcionC=="No":
+                            print "Cancelado"
+                    else:
+                        print "No se encontró resultados"
+                    print
+                    time.sleep(2)
+
                 elif pay == "no" or pay=="NO" or pay=="No":
                     print "Regresando al menu de seleccion"
                     time.sleep(2)
@@ -373,23 +411,40 @@ class auto():
                 print "============================================"
                 time.sleep(2)
                 print Honda.mark, "\nModelo: ", Honda.model, "\nAnio: ", Honda.year, "\nMotor: ", Honda.motor, "\nKilometraje: ", Honda.km, "\nPrecio: ", Honda.cost
-                time.sleep(4)
+                time.sleep(1)
                 print
-                print "¿Desea comprar este auto?(si/no)\n"
-                pay = raw_input()
+                pay = raw_input("¿Desea comprar este auto?(si/no) >>")
                 if pay == "si" or pay=="SI" or pay=="Si":
+                    identidad=raw_input("Ingrese su número de identidad:")
+                    if (identidad in arrayIdentificacion)==True:
+                        posicion=arrayIdentificacion.index(identidad)
+                        print "Datos encontrados: "
+                        print
+                        print "================================="
+                        print arrayPersona[posicion]
+                        print "================================="
+                        print
+                        opcionC=raw_input("¿Desea proceder con la compra?(Si/No) >>")
+                        if opcionC=="si" or opcionC=="SI" or opcionC=="Si":
+                            print "Procesando..."
+                            time.sleep(1)
+                            arrayHonda.append(Honda.mark)
+                            arrayHonda.append(Honda.model)
+                            arrayHonda.append(Honda.year)
+                            arrayHonda.append(Honda.motor)
+                            arrayHonda.append(Honda.cost)
+                            arrayCar.append(arrayHonda)
+                            arrayPersona[posicion].append(arrayHonda)
+                            print arrayPersona[posicion]
+                            print "FELICIDADES:Su compra se ha realizado con éxito"
+                            print "Regresando al menú de compra..."
+                        elif opcionC=="no" or opcionC=="NO" or opcionC=="No":
+                            print "Cancelado"
+                    else:
+                        print "No se encontró resultados"
                     print
-                    print "Procesando..."
-                    time.sleep(1)
-                    print "<<=- Su compra se ha realizado con éxito -=>>"
-                    print "Regresando al menú de compra..."
-                    arrayHonda.append(Honda.mark)
-                    arrayHonda.append(Honda.model)
-                    arrayHonda.append(Honda.year)
-                    arrayHonda.append(Honda.motor)
-                    arrayHonda.append(Honda.cost)
-                    arrayCar.append(arrayHonda)
-                    time.sleep(4)
+                    time.sleep(2)
+
                 elif pay == "no" or pay=="NO" or pay=="No":
                     print "Regresando al menu de seleccion"
                     time.sleep(2)
@@ -399,22 +454,40 @@ class auto():
                 print "============================================"
                 time.sleep(2)
                 print Nissan.mark, "\nModelo: ", Nissan.model, "\nAnio: ", Nissan.year, "\nMotor: ", Nissan.motor, "\nKilometraje: ", Nissan.km, "\nPrecio: ", Nissan.cost
-                time.sleep(4)
+                time.sleep(1)
                 print
-                print "¿Desea comprar este auto?(si/no)\n"
-                pay = raw_input()
+                pay = raw_input("¿Desea comprar este auto?(si/no) >>")
                 if pay == "si" or pay=="SI" or pay=="Si":
-                    print "Procesando..."
-                    time.sleep(1)
-                    print "<<=- Su compra se ha realizado con éxito -=>>"
-                    print "Regresando al menú de compra..."
-                    arrayNissan.append(Nissan.motor)
-                    arrayNissan.append(Nissan.motor)
-                    arrayNissan.append(Nissan.motor)
-                    arrayNissan.append(Nissan.motor)
-                    arrayNissan.append(Nissan.motor)
-                    arrayCar.append(arrayNissan)
-                    time.sleep(4)
+                    identidad=raw_input("Ingrese su número de identidad:")
+                    if (identidad in arrayIdentificacion)==True:
+                        posicion=arrayIdentificacion.index(identidad)
+                        print "Datos encontrados: "
+                        print
+                        print "================================="
+                        print arrayPersona[posicion]
+                        print "================================="
+                        print
+                        opcionC=raw_input("¿Desea proceder con la compra?(Si/No) >>")
+                        if opcionC=="si" or opcionC=="SI" or opcionC=="Si":
+                            print "Procesando..."
+                            time.sleep(1)
+                            arrayNissan.append(Nissan.mark)
+                            arrayNissan.append(Nissan.model)
+                            arrayNissan.append(Nissan.year)
+                            arrayNissan.append(Nissan.motor)
+                            arrayNissan.append(Nissan.cost)
+                            arrayCar.append(arrayNissan)
+                            arrayPersona[posicion].append(arrayNissan)
+                            print arrayPersona[posicion]
+                            print "FELICIDADES:Su compra se ha realizado con éxito"
+                            print "Regresando al menú de compra..."
+                        elif opcionC=="no" or opcionC=="NO" or opcionC=="No":
+                            print "Cancelado"
+                    else:
+                        print "No se encontró resultados"
+                    print
+                    time.sleep(2)
+
                 elif pay == "no" or pay=="NO" or pay=="No":
                     print "Regresando al menu de seleccion"
                     time.sleep(2)
